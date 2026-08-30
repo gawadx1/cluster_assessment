@@ -1,0 +1,36 @@
+{
+  "files": {
+    "areas_reference.csv": {
+      "rows": 4,
+      "sha256": "a4fe12fa7afe04e217c888f4dafbba8afe9fe69ec47a36e27a00b1e120f1c0c9"
+    },
+    "field_visit_log.csv": {
+      "rows": 12083,
+      "sha256": "e88d9751eff3beb34b1bbaf844303930d1a3329bfc43e97857dd00e29ee6f965"
+    },
+    "invoices_app.csv": {
+      "rows": 8943,
+      "sha256": "0aebd7155d68516c42dcf6ccf929a486c64b38c75263802b30b8210b8f09c6c9"
+    },
+    "invoices_erp.csv": {
+      "rows": 17691,
+      "sha256": "dbab2a18ba3bd594b15f81137433d9f1e8f8df688bb3e1acb233815f2e001601"
+    },
+    "invoices_legacy.csv": {
+      "rows": 4185,
+      "sha256": "0bf22c192b95e0a211d12790de42af8d44520129836f22b8bd271460f3478468"
+    },
+    "pharmacy_registry.csv": {
+      "rows": 1826,
+      "sha256": "4f021e0987c88cb8018bdde8c1073e12d27649445911b4f17cea78000692e314"
+    },
+    "route_plan_tomorrow.csv": {
+      "rows": 64,
+      "sha256": "7dffb8cd51dd59d97b3df4345ff4a9e20f4b6a4db519265d364d6e836dea41a9"
+    }
+  },
+  "window": {
+    "end": "2026-08-26",
+    "start": "2024-09-01"
+  }
+}

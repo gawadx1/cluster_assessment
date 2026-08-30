@@ -1,0 +1,92 @@
+================================================================================
+TASK 2 - DISPATCH ROUTE ARITHMETIC AUDIT PROOF
+Constraint: Return to Centroid Base <= 17:40 (1060.0 minutes from midnight)
+================================================================================
+
+AREA: SMOUHA (Representative ID: 1)
+Map Centroid Base: (31.209310, 29.941735)
+Planned Stops: 16
+Start Departure: 09:00 (Minute 540.0)
+Final Return:    16:17 (Minute 977.7)
+Return Deadline: 17:40 (Minute 1060.0)
+Spare Margin:    +82.3 minutes
+Cutoff Check:    PASSED (<= 17:40)
+Exact Equation:  09:00 (540.0m) + Drives (146.7m) + Stays (266.0m) + Lunch (25.0m) = 16:17 (977.7m) <= 17:40 (1060.0m)
+------------------------------------------------------------
+  * Total Driving Travel Time : 146.7 min
+  * Total Pharmacy Stay Time   : 266.0 min
+  * Mandatory Lunch Break      : 25.0 min (after Stop 8)
+  * Total Working Day Span     : 437.7 min
+------------------------------------------------------------
+Critical Failure Analysis:
+  * Most Damaging Stop Failure : Stop 10 - Alpha Pharma - Zayed (Priority P1)
+  * Damage Score               : 60.0
+  * Impact Description         : If Stop 10 (Alpha Pharma - Zayed, P1) fails, rep returns at 17:02 (0m breach) and jeopardizes 0 downstream Priority 1 stops.
+
+================================================================================
+
+AREA: NASR CITY (Representative ID: 2)
+Map Centroid Base: (30.052395, 31.352880)
+Planned Stops: 16
+Start Departure: 09:00 (Minute 540.0)
+Final Return:    16:26 (Minute 986.4)
+Return Deadline: 17:40 (Minute 1060.0)
+Spare Margin:    +73.6 minutes
+Cutoff Check:    PASSED (<= 17:40)
+Exact Equation:  09:00 (540.0m) + Drives (133.4m) + Stays (288.0m) + Lunch (25.0m) = 16:26 (986.4m) <= 17:40 (1060.0m)
+------------------------------------------------------------
+  * Total Driving Travel Time : 133.4 min
+  * Total Pharmacy Stay Time   : 288.0 min
+  * Mandatory Lunch Break      : 25.0 min (after Stop 8)
+  * Total Working Day Span     : 446.4 min
+------------------------------------------------------------
+Critical Failure Analysis:
+  * Most Damaging Stop Failure : Stop 3 - Pharma Plus - Obour (Priority P1)
+  * Damage Score               : 120.0
+  * Impact Description         : If Stop 3 (Pharma Plus - Obour, P1) fails, rep returns at 17:11 (0m breach) and jeopardizes 4 downstream Priority 1 stops.
+
+================================================================================
+
+AREA: FAISAL (Representative ID: 3)
+Map Centroid Base: (30.005555, 31.167745)
+Planned Stops: 16
+Start Departure: 09:00 (Minute 540.0)
+Final Return:    16:01 (Minute 961.4)
+Return Deadline: 17:40 (Minute 1060.0)
+Spare Margin:    +98.6 minutes
+Cutoff Check:    PASSED (<= 17:40)
+Exact Equation:  09:00 (540.0m) + Drives (145.4m) + Stays (251.0m) + Lunch (25.0m) = 16:01 (961.4m) <= 17:40 (1060.0m)
+------------------------------------------------------------
+  * Total Driving Travel Time : 145.4 min
+  * Total Pharmacy Stay Time   : 251.0 min
+  * Mandatory Lunch Break      : 25.0 min (after Stop 8)
+  * Total Working Day Span     : 421.4 min
+------------------------------------------------------------
+Critical Failure Analysis:
+  * Most Damaging Stop Failure : Stop 1 - Care 24 Seven - Faisal (Priority P1)
+  * Damage Score               : 150.0
+  * Impact Description         : If Stop 1 (Care 24 Seven - Faisal, P1) fails, rep returns at 16:46 (0m breach) and jeopardizes 6 downstream Priority 1 stops.
+
+================================================================================
+
+AREA: MOHANDESSIN (Representative ID: 4)
+Map Centroid Base: (30.057640, 31.197740)
+Planned Stops: 16
+Start Departure: 09:00 (Minute 540.0)
+Final Return:    16:10 (Minute 970.5)
+Return Deadline: 17:40 (Minute 1060.0)
+Spare Margin:    +89.5 minutes
+Cutoff Check:    PASSED (<= 17:40)
+Exact Equation:  09:00 (540.0m) + Drives (134.5m) + Stays (271.0m) + Lunch (25.0m) = 16:10 (970.5m) <= 17:40 (1060.0m)
+------------------------------------------------------------
+  * Total Driving Travel Time : 134.5 min
+  * Total Pharmacy Stay Time   : 271.0 min
+  * Mandatory Lunch Break      : 25.0 min (after Stop 8)
+  * Total Working Day Span     : 430.5 min
+------------------------------------------------------------
+Critical Failure Analysis:
+  * Most Damaging Stop Failure : Stop 1 - Union Pharm - Haram (Priority P1)
+  * Damage Score               : 165.0
+  * Impact Description         : If Stop 1 (Union Pharm - Haram, P1) fails, rep returns at 16:55 (0m breach) and jeopardizes 7 downstream Priority 1 stops.
+
+================================================================================

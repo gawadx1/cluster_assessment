@@ -1,0 +1,17 @@
+{
+  "areas_count": 4,
+  "pharmacies_total": 1826,
+  "visits_total": 12083,
+  "app_invoices_total": 8943,
+  "erp_invoices_total": 17691,
+  "legacy_invoices_total": 4185,
+  "tomorrow_stops_total": 64,
+  "erp_matched_count": 7436,
+  "erp_unmatched_count": 10255,
+  "erp_match_rate": 0.42032671980102876,
+  "invoices_combined_total": 20564,
+  "invoices_unique_pharmacies": 1777,
+  "visits_missing_departure": 736,
+  "visits_cancelled": 138,
+  "visits_valid_good": 11347
+}

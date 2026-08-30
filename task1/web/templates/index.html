@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 1 — Pharmacy Clean Data</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Pharmacy Clean Data Explorer</h1>
+    <p class="subtitle">Canonical identities, recovered areas, reconciled revenue (EGP)</p>
+  </header>
+
+  <section class="filters card">
+    <label>From <input type="date" id="dateStart" value="2024-09-01" /></label>
+    <label>To <input type="date" id="dateEnd" value="2026-08-26" /></label>
+    <label>Area
+      <select id="areaFilter">
+        <option value="All areas">All areas</option>
+      </select>
+    </label>
+    <button id="applyFilters">Apply filters</button>
+  </section>
+
+  <section class="grid stats" id="summaryCards"></section>
+
+  <section class="layout">
+    <div class="card">
+      <h2>Pharmacies</h2>
+      <input type="search" id="pharmacySearch" placeholder="Search pharmacy name..." />
+      <ul id="pharmacyList" class="list"></ul>
+    </div>
+
+    <div class="card" id="detailPanel">
+      <h2>Pharmacy detail</h2>
+      <p class="muted">Select a pharmacy to view aliases, area, and revenue over time.</p>
+      <div id="pharmacyDetail" hidden></div>
+    </div>
+  </section>
+
+  <section class="grid two-col">
+    <div class="card">
+      <h2>Pharmacies per area</h2>
+      <table id="pharmaciesPerArea"><thead><tr><th>Area</th><th>Count</th></tr></thead><tbody></tbody></table>
+    </div>
+    <div class="card">
+      <h2>Revenue per area</h2>
+      <table id="revenuePerArea"><thead><tr><th>Area</th><th>Revenue (EGP)</th><th>Orders</th></tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <section class="grid two-col">
+    <div class="card">
+      <h2>Top pharmacies</h2>
+      <table id="topPharmacies"><thead><tr><th>Rank</th><th>Pharmacy</th><th>Area</th><th>Revenue (EGP)</th><th>Orders</th></tr></thead><tbody></tbody></table>
+    </div>
+    <div class="card">
+      <h2>Top pharmacies by area</h2>
+      <label>Area <select id="topAreaSelect"><option value="">Select area</option></select></label>
+      <div id="topByArea"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Top suppliers</h2>
+    <table id="topSuppliers"><thead><tr><th>Rank</th><th>Supplier</th><th>Revenue (EGP)</th><th>Orders</th><th>Pharmacies served</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section class="card">
+      <h2>Data quality &amp; reconciliation</h2>
+    <div id="qualitySummary"></div>
+    <table id="cleaningImpact"><thead><tr><th>Rule</th><th>Rows</th><th>Money impact (EGP)</th><th>Rule</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section class="card">
+    <h2>Unmatched data (measured)</h2>
+    <div id="unmatchedSummary"></div>
+    <details>
+      <summary>Sample unmatched ERP invoices</summary>
+      <table id="unmatchedErp"><thead><tr><th>Invoice</th><th>Account name</th><th>Branch</th><th>Date</th><th>Amount</th><th>Status/reason</th></tr></thead><tbody></tbody></table>
+    </details>
+    <details>
+      <summary>Sample unmatched supplier aliases</summary>
+      <table id="unmatchedAliases"><thead><tr><th>Alias</th><th>Supplier</th><th>Branch</th><th>Score</th><th>Status/reason</th></tr></thead><tbody></tbody></table>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>Revenue definition</h2>
+    <p>Revenue is the sum of the clean revenue ledger. APP includes paid/shipped orders; ERP includes matched, valid, positive reconciled invoices; LEGACY includes parseable pharmacy documents, with credit documents retained as negative amounts. Detail lines are aggregated by invoice, the date window is inclusive, and canceled, pending, out-of-window, zero, or null records are excluded according to the documented rules in README.md.</p>
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
