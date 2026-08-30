@@ -17,11 +17,13 @@ def sha256_file(path: Path) -> str:
 
 
 def sha256_normalized(path: Path) -> str:
-    """Hash canonical UTF-8 text so BOM/newline representation is immaterial."""
-    raw = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
-    if raw.startswith(b"\xef\xbb\xbf"):
-        raw = raw[3:]
-    return hashlib.sha256(raw).hexdigest()
+    """Hash canonical UTF-8 text so BOM/newline representation is immaterial (streaming)."""
+    digest = hashlib.sha256()
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        for line in handle:
+            clean_line = line.rstrip("\r\n") + "\n"
+            digest.update(clean_line.encode("utf-8"))
+    return digest.hexdigest()
 
 
 def load_manifest() -> dict:

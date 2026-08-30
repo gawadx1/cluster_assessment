@@ -1,0 +1,104 @@
+{
+  "files": {
+    "pharmacy_registry.csv": {
+      "expected_rows": 1826,
+      "actual_rows": 1826,
+      "sha256_ok": false,
+      "sha256_raw_match": false,
+      "ok": false
+    },
+    "areas_reference.csv": {
+      "expected_rows": 4,
+      "actual_rows": 4,
+      "sha256_ok": false,
+      "sha256_raw_match": false,
+      "ok": false
+    },
+    "supplier_branches.csv": {
+      "expected_rows": 83,
+      "actual_rows": 83,
+      "sha256_ok": false,
+      "sha256_raw_match": false,
+      "ok": false
+    },
+    "supplier_account_names.csv": {
+      "expected_rows": 14953,
+      "actual_rows": 14953,
+      "sha256_ok": false,
+      "sha256_raw_match": false,
+      "ok": false
+    },
+    "invoices_app.csv": {
+      "expected_rows": 8943,
+      "actual_rows": 8943,
+      "sha256_ok": false,
+      "sha256_raw_match": false,
+      "ok": false
+    },
+    "invoice_details_app.csv": {
+      "expected_rows": 61735,
+      "actual_rows": 61735,
+      "sha256_ok": false,
+      "sha256_raw_match": false,
+      "ok": false
+    },
+    "invoices_erp.csv": {
+      "expected_rows": 17691,
+      "actual_rows": 17691,
+      "sha256_ok": false,
+      "sha256_raw_match": false,
+      "ok": false
+    },
+    "invoice_details_erp.csv": {
+      "expected_rows": 122775,
+      "actual_rows": 122775,
+      "sha256_ok": false,
+      "sha256_raw_match": false,
+      "ok": false
+    },
+    "invoices_legacy.csv": {
+      "expected_rows": 4185,
+      "actual_rows": 4185,
+      "sha256_ok": false,
+      "sha256_raw_match": false,
+      "ok": false
+    },
+    "invoice_details_legacy.csv": {
+      "expected_rows": 28261,
+      "actual_rows": 28261,
+      "sha256_ok": false,
+      "sha256_raw_match": false,
+      "ok": false
+    }
+  },
+  "ok": false,
+  "window": {
+    "end": "2026-08-26",
+    "start": "2024-09-01"
+  },
+  "output_validation": {
+    "ok": true,
+    "checks": {
+      "unique_master_pharmacy_ids": true,
+      "valid_ledger_pharmacies": true,
+      "valid_identity_pharmacies": true,
+      "valid_areas": true,
+      "valid_dates": true,
+      "no_duplicate_supplier_aliases": true,
+      "alias_partition_disjoint": true,
+      "alias_partition_complete": true,
+      "unmatched_partition": true,
+      "unique_source_invoice_rows": true,
+      "revenue_sum_finite": true,
+      "ledger_sum_reconciles": true
+    },
+    "counts": {
+      "ledger_rows": 11773,
+      "master_pharmacies": 1826,
+      "matched_aliases": 1720,
+      "ambiguous_aliases": 2702,
+      "unmatched_aliases": 10531,
+      "unmatched_erp_invoices": 15507
+    }
+  }
+}

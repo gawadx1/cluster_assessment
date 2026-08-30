@@ -2,7 +2,9 @@
 setlocal
 cd /d "%~dp0"
 
-echo === Task 1: Cluster Assessment ===
+echo ===================================================
+echo === Task 1: Cluster Assessment Streamlit Dashboard
+echo ===================================================
 echo.
 
 if exist "%LocalAppData%\Programs\Python\Python37\python.exe" (
@@ -13,10 +15,10 @@ if exist "%LocalAppData%\Programs\Python\Python37\python.exe" (
   set "PY=python"
 )
 
-echo [1/3] Checking offline Python dependencies...
-%PY% -c "import pandas, flask, rapidfuzz" >nul 2>&1
+echo [1/3] Checking offline Python dependencies (pandas, rapidfuzz, streamlit)...
+%PY% -c "import pandas, rapidfuzz, streamlit" >nul 2>&1
 if %ERRORLEVEL% neq 0 (
-  echo Required packages are missing. Install them before running this offline assessment.
+  echo Required packages are missing. Please ensure pandas, rapidfuzz, and streamlit are installed.
   pause
   exit /b 1
 )
@@ -27,22 +29,20 @@ if not "%PY_BITS%"=="64" (
   exit /b 1
 )
 
-echo [2/3] Running data pipeline...
+echo [2/3] Running deterministic data pipeline...
 cd /d "%~dp0"
 set PYTHONPATH=%~dp0
 if not exist output mkdir output
 del /q output\*.json output\*.csv >nul 2>&1
 %PY% run_pipeline.py
 if %ERRORLEVEL% neq 0 (
-  echo Pipeline failed.
+  echo Pipeline execution failed.
   pause
   exit /b 1
 )
 
-echo [3/3] Starting website on http://127.0.0.1:5000 ...
+echo [3/3] Launching Streamlit dashboard on http://localhost:8501 ...
 set PYTHONPATH=%~dp0
-cd web
-start "" http://127.0.0.1:5000
-%PY% app.py
+%PY% -m streamlit run app.py --server.port 8501 --server.headless false --browser.gatherUsageStats false
 
 pause

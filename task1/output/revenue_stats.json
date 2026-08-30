@@ -1,0 +1,59 @@
+{
+  "impacts": [
+    {
+      "rule_id": "APP-01",
+      "description": "Exclude order_status in ['canceled', 'pending_hold']",
+      "rows_affected": 3060,
+      "monetary_impact_egp": 10911303.719999999
+    },
+    {
+      "rule_id": "APP-02",
+      "description": "Exclude orders outside 2024-09-01..2026-08-26",
+      "rows_affected": 411,
+      "monetary_impact_egp": 1477071.3
+    },
+    {
+      "rule_id": "APP-03",
+      "description": "Exclude zero/null revenue APP orders",
+      "rows_affected": 0,
+      "monetary_impact_egp": 0.0
+    },
+    {
+      "rule_id": "ERP-01",
+      "description": "Exclude ERP invoices without matched pharmacy identity",
+      "rows_affected": 15507,
+      "monetary_impact_egp": 55927326.98
+    },
+    {
+      "rule_id": "ERP-02",
+      "description": "Exclude ERP orders outside 2024-09-01..2026-08-26",
+      "rows_affected": 14,
+      "monetary_impact_egp": 41758.52
+    },
+    {
+      "rule_id": "ERP-03",
+      "description": "Exclude zero/null revenue ERP orders",
+      "rows_affected": 0,
+      "monetary_impact_egp": 0.0
+    },
+    {
+      "rule_id": "LEG-01",
+      "description": "Credit documents (CR) reduce revenue via negative line_value",
+      "rows_affected": 78,
+      "monetary_impact_egp": -16372.4
+    },
+    {
+      "rule_id": "LEG-02",
+      "description": "Exclude legacy docs without parseable P:pharmacy_id",
+      "rows_affected": 0,
+      "monetary_impact_egp": 0.0
+    },
+    {
+      "rule_id": "LEG-03",
+      "description": "Exclude legacy docs outside 2024-09-01..2026-08-26",
+      "rows_affected": 0,
+      "monetary_impact_egp": 0.0
+    }
+  ],
+  "total_revenue_egp": 42056618.59
+}

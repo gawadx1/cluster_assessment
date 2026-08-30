@@ -1,0 +1,2 @@
+pharmacy_id,registry_area,resolved_area,area_source,area_confidence,vote_breakdown,area_conflict,evidence_count,conflicting_area_count
+2805,,,invoice_evidence_conflict,ambiguous,"{'Nasr City': {'erp_account_address': 10, 'erp_header_area': 3, 'erp_ship_to_address': 28}, 'Smouha': {'erp_account_address': 4, 'erp_ship_to_address': 21}, 'Faisal': {'erp_account_address': 8, 'erp_ship_to_address': 43}, 'Mohandessin': {'erp_header_area': 3, 'erp_ship_to_address': 4}}",True,109,3
